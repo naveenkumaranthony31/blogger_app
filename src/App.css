@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/*home*/
+#wrapper {
+  width: 100%;
+ 
+  background: url("/src/Images/niteback.jpg") no-repeat center center/cover;
 }
-
-.App-header {
+/*Login*/
+.gradient-custom {
   background-color: #282c34;
-  min-height: 100vh;
+}
+
+/*navbar*/
+.navba {
+  background-color: blue;
+}
+/*card*/
+.cardmain {
+  border-radius: 20px;
+}
+.imagecard {
+  margin-top: -7.1px;
+}
+
+.cardlg{
+  background: url("/src/Images/cardbak.jpg") no-repeat center center/cover;
+ 
+}
+/*button*/
+.bttn {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+.btn1 {
+  background-color: #109622;
+  border: none;
+  border-radius: 10px;
   color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
 }
-
-.App-link {
-  color: #61dafb;
+.btn1:hover {
+  text-transform: uppercase;
+  background-color: #60dd70;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn2 {
+  background-color: #961022; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+.btn2:hover {
+  text-transform: uppercase;
+  background-color: #ee2741;
+}
+/* navbar */
+.boyanimation {
+  height: 100px;
+  width: 100px;
+}
+.navhead {
+  color: rgba(173, 169, 169, 0.979);
+  text-decoration: none;
+  font-weight: 10rem;
+  font-family: ropo;
+}
+.navhead:hover {
+  color: #a58004;
+}
+.navvhead {
+  color: #a58004;
+}
+/* .navadd{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #109622;
+    align-items: center;
+   } */
+/* AdddBlogg */
+.addblgbtn {
+  display: flex;
+  justify-content: right;
+  padding-right: 20px;
+  background-color: #030f4996;
+  border: none;
+  border-radius: 30%;
+padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+font-size: 18px;
+}
+.addblgbtn:hover{
+ background-color: #e970cb65;
+ text-transform: uppercase;
+}
+.addtxt {
+  font-size: 22px;
+  padding-top: 10px;
+  color: rgba(173, 169, 169, 0.979);
+  top: 10px;
+}
+.plusanimation {
+  height: 50px;
+  width: 40px;
+}
+/* viewblgg */
+/* maincard */
+.cardhed{
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-display: upperca;
+}
+.subhed{
+ font-size: 18px;
+ font-family: sans-serif;
+color: white;
+}
+.incard{
+padding-top: -40px;
 }

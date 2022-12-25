@@ -1,3 +1,3 @@
 export const config = {
-    api : 'https://bloggerbackend.onrender.com'
+    api : 'https://blogger-backend-9j6e.onrender.com'
 }

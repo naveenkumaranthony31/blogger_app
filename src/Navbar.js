@@ -2,19 +2,16 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import boy from "./boy.json";
-import AddBlogg from "./AddBlogg";
-import UserName from "./UserName";
+import plus from "./plus.json";
 
-//import TwoWheeler from './TwoWheeler';
 function Navbar(props) {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   let doLogout = () => {
-      localStorage.removeItem('react_app_token');
-      navigate('/')
-      
-    }
+    localStorage.removeItem("react_app_token");
+    navigate("/");
+  };
   const Navigate = useNavigate;
- 
+
   return (
     <nav class="navbar ">
       <div class="container-fluid">
@@ -26,12 +23,17 @@ function Navbar(props) {
             <span className="navvhead">P</span>age
           </h1>
         </Link>
-        <button className='m-2 btn btn-secondary ' onClick={doLogout}>Logout</button>
+        <button className="m-2 btn btn-secondary " onClick={doLogout}>
+          Logout
+        </button>
         <ul class="navadd navbar-nav ms-auto">
           <li class="nav-item">
-           {props.data}
-            <AddBlogg></AddBlogg>
-           
+            <button className="addblgbtn">
+              <Lottie className="plusanimation" animationData={plus} />
+              <span className="addtxt">
+                <Link to="/AddBlogg">AddYourBlog</Link>
+              </span>
+            </button>
           </li>
         </ul>
       </div>

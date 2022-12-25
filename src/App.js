@@ -5,7 +5,7 @@ import Home from './Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login';
 import Register from './Register';
-//import SubCard from './SubCard';
+import AddBlogg from './AddBlogg';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -17,6 +17,7 @@ function App() {
             <Route path="/" element={<Login />} />
             <Route path="/Home" element={<Home />} />
             <Route path="/Register" element={<Register />} />
+            <Route path="/AddBlogg" element={<AddBlogg />} />
              {/*<Route path="/subCard/:id" element={<SubCard />} />*/}
             {/*<Route path="/AddYourBlogg" element={} />*/}
             </Routes>

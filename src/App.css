@@ -107,6 +107,7 @@ font-size: 18px;
  text-transform: uppercase;
 }
 .addtxt {
+  text-decoration: none;
   font-size: 22px;
   padding-top: 10px;
   color: rgba(173, 169, 169, 0.979);
@@ -115,6 +116,19 @@ font-size: 18px;
 .plusanimation {
   height: 50px;
   width: 40px;
+}
+.cntr{
+
+  padding-top: 30px;
+  border: none;
+  border-radius: 10px;
+}
+.form-control{
+max-width: 50%;
+}
+.addbloglabel{
+font-size: 20px;
+
 }
 /* viewblgg */
 /* maincard */

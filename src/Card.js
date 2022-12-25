@@ -1,14 +1,15 @@
 import React from 'react'
-import { setStatus, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
 import { config } from "./config";
-import Button from 'react-bootstrap/Button';
-import { useParams } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 function Card({item}) {
 const [view,setView]=useState('')
-
 const [users, setUsers] = useState([]);
+const navigate = useNavigate();
+
+
 
   useEffect(() => {
         loadData()
@@ -30,20 +31,22 @@ const [users, setUsers] = useState([]);
     let userDelete = async (users) => {
         try {
             let ask = window.confirm("Are you sure? Do you want to delete this data ?");
+
             if(ask){
                 await axios.delete(`${config.api}/card/${users}`,{
                   headers: {
                     'Authorization': `${localStorage.getItem('react_app_token')}`
                   }
                 });
-                
+                   navigate("/Home");
                 loadData();
             }
             
         } catch (error) {
             
         }
-    }
+     
+      }
 
   return (
   <>
@@ -55,8 +58,7 @@ const [users, setUsers] = useState([]);
 <p class="subhed card-text">{item.paragraph}</p>
     <div className="col-lg bttn">
     <button className="btn1" onClick={() => setView(true)}>view</button>
-
-    <button className="btn2" onClick={()=>userDelete(item._id)}>Delete</button>
+<button className="btn2" onClick={()=>userDelete(item._id)}>Delete</button>
     </div>
    <Modal
         size="sl"

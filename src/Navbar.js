@@ -5,6 +5,8 @@ import boy from "./boy.json";
 import plus from "./plus.json";
 
 function Navbar(props) {
+  const refresh = () => window.location.reload(true)
+
   let navigate = useNavigate();
   let doLogout = () => {
     localStorage.removeItem("react_app_token");
@@ -26,6 +28,7 @@ function Navbar(props) {
         <button className="m-2 btn btn-secondary " onClick={doLogout}>
           Logout
         </button>
+        <button onClick={refresh}>Refresh</button>
         <ul class="navadd navbar-nav ms-auto">
           <li class="nav-item">
             <button className="addblgbtn">

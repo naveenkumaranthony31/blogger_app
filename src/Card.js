@@ -5,18 +5,21 @@ import axios from "axios";
 import { config } from "./config";
 import { useNavigate } from "react-router-dom";
 function Card({item}) {
-const [view,setView]=useState('')
+const [view,setView]=useState('');
 const [users, setUsers] = useState([]);
-const navigate = useNavigate();
+const [userdelete, setUserDelete] = useState(false);
 
-
+const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
         loadData()
+       
     }, []);
 
+   
     let loadData = async () => {
-       
+      setLoading(true);
+
         let users = await axios.get(`${config.api}/card`,
         {
           headers: {
@@ -24,24 +27,23 @@ const navigate = useNavigate();
           }
         })
         console.log(users)
-        setUsers(users.data)
-       
+        setUsers(users.data);
+        setUserDelete(true);
+setLoading(false);
     }
 
-    let userDelete = async (users) => {
+    let UserDelete = async (users) => {
         try {
             let ask = window.confirm("Are you sure? Do you want to delete this data ?");
-
-            if(ask){
+         if(ask){
                 await axios.delete(`${config.api}/card/${users}`,{
                   headers: {
                     'Authorization': `${localStorage.getItem('react_app_token')}`
                   }
                 });
-                   navigate("/Home");
-                loadData();
+             
             }
-            
+            loadData(); 
         } catch (error) {
             
         }
@@ -49,7 +51,11 @@ const navigate = useNavigate();
       }
 
   return (
-  <>
+    <>
+    {isLoading ? (
+      <span>Loading...</span>
+    ) : (
+ 
     <div class="col-lg-3 mt-4">
    <div class="cardlg card" style={{width: "15 rem"}}>
    <h1 class="cardhed card-text">{item.title}</h1>
@@ -58,7 +64,7 @@ const navigate = useNavigate();
 <p class="subhed card-text">{item.paragraph}</p>
     <div className="col-lg bttn">
     <button className="btn1" onClick={() => setView(true)}>view</button>
-<button className="btn2" onClick={()=>userDelete(item._id)}>Delete</button>
+<button className="btn2" onClick={()=>UserDelete(item._id)}>Delete</button>
     </div>
    <Modal
         size="sl"
@@ -91,8 +97,11 @@ const navigate = useNavigate();
 </div>
 </div>
 
+
+)}
 </>
   )
 
   }
-export default Card
+
+export default Card;

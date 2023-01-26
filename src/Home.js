@@ -5,7 +5,7 @@ import axios from "axios";
 import { config } from "./config";
 import { useEffect, useState } from "react";
 function Home(){
-  
+ 
   const [data, setData]=useState([])
   useEffect(()=>{
     loadData()
